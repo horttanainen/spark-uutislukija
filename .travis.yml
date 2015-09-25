@@ -1,0 +1,13 @@
+language: java
+
+before_install:
+    cd bibtexdatabase;
+    git clone https://github.com/horttanainen/UutisLukija.git;
+    mvn clean install -U -f UutisLukija/pom.xml;
+    git clone https://github.com/horttanainen/PaivanUutiset.git;
+    mvn clean install -U -f PaivanUutiset/pom.xml;
+    git clone https://github.com/horttanainen/HackerNewsUutiset.git;
+    mvn clean install -U -f HackerNewsUutiset/pom.xml;
+
+after_success:
+    - mvn clean cobertura:cobertura coveralls:report
