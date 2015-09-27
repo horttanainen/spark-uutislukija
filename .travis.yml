@@ -1,13 +1,12 @@
 language: java
-
+jdk:
+      - oraclejdk8
 before_install:
     cd spark-uutislukija;
     git clone https://github.com/horttanainen/PaivanUutiset.git;
     mvn clean install -U -f PaivanUutiset/pom.xml;
     git clone https://github.com/horttanainen/HackerNewsUutiset.git;
-    mvn clean install -U -f HackerNewsUutiset/pom.xml;
-    git clone https://github.com/horttanainen/UutisLukija.git;
-    mvn clean install -U -f UutisLukija/pom.xml;
+    mvn clean install -DskipTests -U -f HackerNewsUutiset/pom.xml;
 
 after_success:
-    - mvn clean cobertura:cobertura coveralls:report
+    - mvn clean cobertura:cobertura coveralls:report heroku:deploy
