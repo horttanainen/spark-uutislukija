@@ -5,9 +5,4 @@ before_install: cd spark-uutislukija; git clone https://github.com/horttanainen/
   mvn clean install -U -f PaivanUutiset/pom.xml; git clone https://github.com/horttanainen/HackerNewsUutiset.git;
   mvn clean install -U -f HackerNewsUutiset/pom.xml;
 after_success:
-    - mvn clean cobertura:cobertura coveralls:report heroku:deploy
-deploy:
-  provider: heroku
-  app: spark-uutislukija-heroku
-  api_key:
-    secure: R9fbUE4z46yz1q2mxRi9pl04/+TwRPC9mlIcL5Z5jflnAvWXQ0m6Exeps45q6WEWMxjbNsnILooQBcggEJ4UjISe9js0xHZNsr5K2LTowqD4AfL74Ysb6KlSg1QqYtbWZ6G3Ly9+8iSW5qpX++o/yL448vkmBikewr9q/Gv+ATG60MuOhGmZLGl3mDnr4OZ1H21y4BBjZZn78pC4f0w0RH1BwisM5Xqo9LTWgkB7bg/trFYiXEVgr1H4M1SD23l13/hqa6WRx7KpFGc+Aqvdg88+/aevGgDcAH+qVmrKKGCux8+fofeGirSj313qj6v9y5tXEmGW9dYTVpMVfmMLAWOh2JVKhcbtSdGGnQhFlPcOCaNoWWIfQlTB35M2Klk/bCj3KbESdbe+IhPLeLjr6H4GoIr0At4yBQ7izYdc4YT3eXV/2rZsamFI7A21or21X+nRMpgdjythnzSMyJAwqUrOIzYRG9nwUygjYmn35KQWZGu586MQ0uPmkGpblNF9syND/cd9vxNe2Msz64+iM5UADtiK0TGHf2GTNKT5P3TyvqREZcaAigPKt5nKp4u18SgpAoq5tEgfPwjxqe4rlTrgRNltdD6KuP1ayKMNxrK8kr5/p9IEdNdzpuiEpzvULlq9DmwnAVxXUu/wVrWtQ66TIo9AqUoC/e9vMZofJoY=
+    - mvn clean install cobertura:cobertura coveralls:report heroku:deploy
