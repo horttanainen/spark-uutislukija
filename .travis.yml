@@ -3,7 +3,7 @@ jdk:
 - oraclejdk8
 env:
   global:
-    - secure: jY4ITg0fBl6d+dY9Hq07rAG5IxfzZD0KCZNAoFaIxI+NNAewomJcWTEJiJY9HDQgRQlfU3MJqFjy+np5a+NfTqrXjdfnR3+Cc2msMDQEtxXRK1mGoqzS+ZxPoKWSRvQxuEDhlVkE3+2gFYOpe0jO2u5p5x2DaRoPCHwF5Sj3fWHpoONVs6VcKrsmZbI5D+5m1cdx4ziV3HpAZPJ4fk4EZG9klRJaywGVj5FWLDOG5N2KyDjXQ75wfwt7pX7iX4eIMRKWjbyp/cdeVy+1M9gBHBAlJSKibAoMRwqRj5u/hTh72W222gZE9hnj83GfvaTy3b2NoCxXdao7H3YPIJ8cxo/QWdZFOOoQ0TsgdfkaNpvErANoJmQMjr8Ai58xmtqoa5xKBuArmvRdEPtOob5hOlbsRldnNVqBppGiDD8oDbb32WdCiMEyEWUf7XW9Tjbng87TDK4t9vBLL80LXO0hesUOxKVmT32SGunuJ6N9lJHYbECgUQJYplyRvqOt9X2oS14pxXIwDxq/irMk813pIbuMLQBWmHGPhqDLVxE2i5YIJb4ySjrS721NOFXRjw7nCQ8P9gO4PQHbFuA8i9PhHmVgvuECblpfTK9Dp4KvhjvnpQlVICBZ0imjD8z2PqSyR/0zXZ8lNQZdxdIGVyaHuPAB3/xOUOIe+bupoGfH/WI=
+      - HEROKU_API_KEY: 86e10672-cedc-4769-aba1-c7100d27ba81
 before_install: cd spark-uutislukija; git clone https://github.com/horttanainen/PaivanUutiset.git;
   mvn clean install -U -f PaivanUutiset/pom.xml; git clone https://github.com/horttanainen/HackerNewsUutiset.git;
   mvn clean install -U -f HackerNewsUutiset/pom.xml;
