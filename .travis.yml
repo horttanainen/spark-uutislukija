@@ -1,12 +1,13 @@
 language: java
 jdk:
-      - oraclejdk8
-before_install:
-    cd spark-uutislukija;
-    git clone https://github.com/horttanainen/PaivanUutiset.git;
-    mvn clean install -U -f PaivanUutiset/pom.xml;
-    git clone https://github.com/horttanainen/HackerNewsUutiset.git;
-    mvn clean install -U -f HackerNewsUutiset/pom.xml;
-
+- oraclejdk8
+before_install: cd spark-uutislukija; git clone https://github.com/horttanainen/PaivanUutiset.git;
+  mvn clean install -U -f PaivanUutiset/pom.xml; git clone https://github.com/horttanainen/HackerNewsUutiset.git;
+  mvn clean install -U -f HackerNewsUutiset/pom.xml;
 after_success:
-    - mvn clean cobertura:cobertura coveralls:report heroku:deploy
+- mvn clean cobertura:cobertura coveralls:report heroku:deploy
+deploy:
+  provider: herokui      
+  api_key:
+    secure: cLXi/3jARvwtTSq+Vkir+G3KSspMF5AY2T7fkDaYhtNUqjuBKviLPYGZD1uj6NybxPK8/Q029CEgGWxsFshk9hQWJDZvg1LDZrX6nCCZt60Fe1zFrFc6h7xz5zNDqGtngjVOpLEVqPABDL5Crr93gNPfx53bBuL0AJpFatm2Ix0IVUvH9oahwbBV2XGFQmUj3I5pISb8nGfUGarmt850ZZ53HVUt5WWojpG34AUgLAOTUaKDlpMYPq/grpuP6R8sb9+sGauYjEh1pVVRcTV+MsDacz1ZTda5k/CyFaOnx5XGR2MTWsehrVcX8OT+Qz5ZAREPPVgPeCySxZkzlQ8ySbCgIoqiSjiUcg8Vmqp5rZ4nxW+Q4q09dZXn2Vh4oL1I+Aa12FEaWfvicNZV4t6JYl+ZPTbbWM04ZD8YYJ26a7tAxKP3W/mk8gZNWK/j1wI7emR6yyLfcyn1FeXUwhzXpk23BtFBrrrD8y1eDpPgUnO1rC0SWZt+Rg9SYWWG13D6cmIOI6IACoVboboKC5rzs2Xy3e0h/lzi8vgIVpxEpW5tsJzcZuMBRdW5+8GeH6Y6cbrI6MOx/A4RhDE6FztaAOgnM0nuKEMYgcB+3FZnVB8go3A33xHlncqmxqAc/M9APpm5i5NNUEtXH/tU7lzQ/2tKU/vfv8YzaWW5SUiPmA0=
+    app: spark-uutislukija-heroku
