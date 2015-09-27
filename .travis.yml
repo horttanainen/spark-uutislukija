@@ -6,7 +6,7 @@ before_install:
     git clone https://github.com/horttanainen/PaivanUutiset.git;
     mvn clean install -U -f PaivanUutiset/pom.xml;
     git clone https://github.com/horttanainen/HackerNewsUutiset.git;
-    mvn clean install -DskipTests=true -U -f HackerNewsUutiset/pom.xml;
+    mvn clean install -U -f HackerNewsUutiset/pom.xml;
 
 after_success:
     - mvn clean cobertura:cobertura coveralls:report heroku:deploy
