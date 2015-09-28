@@ -46,6 +46,13 @@ public class MainTest extends FluentTest {
         goTo("http://localhost:4567/viimeisin");
         assertTrue(pageSource().contains("Viimeisin uutinen"));
     }
+    
+    @Test
+    public void linkinKokeiluTest(){
+        goTo("http://localhost:4567/");
+        click(".suosituinLinkki");
+        assertTrue(pageSource().contains("Suosituin uutinen"));
+    }
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
