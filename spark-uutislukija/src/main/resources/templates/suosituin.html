@@ -1,0 +1,24 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head lang="en">    
+        <meta charset="UTF-8"/>
+        <title>Suosituin uutinen</title>
+    </head>
+
+    <body>
+        <header>
+            <h1>Suosituin uutinen</h1>
+        </header>
+        <section>
+            <article>
+                    <p><strong th:text="${suosituin.title}"></strong> Release by <i th:text="${suosituin.by}"></i></p>
+                        <a th:href="${suosituin.url}" th:text="${suosituin.url}"></a>
+            </article>
+            <article>
+                <a href="/main">Takaisin</a>
+            </article>
+        </section>
+    </body>
+
+</html>
